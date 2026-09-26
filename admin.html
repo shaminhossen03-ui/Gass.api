@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GASS Admin - Product Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <div class="logo">GASS Admin</div>
+        <div class="admin-profile">
+            <span>Product & Inventory Panel</span>
+        </div>
+    </header>
+
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <button class="admin-menu-btn active"><i class="fa-solid fa-plus-circle purple-icon"></i> Add Product</button>
+            <button class="admin-menu-btn"><i class="fa-solid fa-list-check purple-icon"></i> Product List</button>
+            <button class="admin-menu-btn"><i class="fa-solid fa-tags purple-icon"></i> Promotions & Discounts</button>
+        </aside>
+
+        <main class="admin-main">
+            <div class="admin-card">
+                <h2>নতুন প্রোডাক্ট পোস্ট করুন</h2>
+                <form id="add-product-form" class="admin-form">
+                    <div class="form-group">
+                        <label>প্রোডাক্টের নাম:</label>
+                        <input type="text" placeholder="যেমন: Sweet Tamarind Box" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>মূল্য (৳):</label>
+                            <input type="number" placeholder="380" required>
+                        </div>
+                        <div class="form-group">
+                            <label>ডিসকাউন্ট (%):</label>
+                            <input type="number" placeholder="24">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ক্যাটাগরি সিলেক্ট করুন:</label>
+                        <select>
+                            <option>Daily Deals</option>
+                            <option>Flash Sale</option>
+                            <option>GASS Diamond Offer</option>
+                            <option>Recently Viewed Items</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>প্রোডাক্টের ছবি আপলোড করুন:</label>
+                        <input type="file" accept="image/*">
+                    </div>
+
+                    <div class="form-group">
+                        <label>বিস্তারিত বিবরণ:</label>
+                        <textarea rows="4" placeholder="প্রোডাক্ট সম্পর্কে লিখুন..."></textarea>
+                    </div>
+
+                    <button type="submit" class="purple-btn large-btn"><i class="fa-solid fa-cloud-arrow-up"></i> পাবলিশ প্রোডাক্ট</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
