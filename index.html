@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GASS - E-Commerce & Game Zone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Google Login / Sign-In Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="login-card">
+            <h2>GASS এ স্বাগতম</h2>
+            <p>চালিয়ে যেতে গুগলের মাধ্যমে লগইন করুন</p>
+            <button id="google-login-btn" class="google-btn">
+                <i class="fa-brands fa-google"></i> Continue with Google
+            </button>
+            <button id="skip-login" class="skip-btn">পরে করব</button>
+        </div>
+    </div>
+
+    <!-- On-Load Promotion Popup -->
+    <div id="promo-popup" class="modal-overlay hidden">
+        <div class="promo-card">
+            <button class="close-btn" id="close-promo">&times;</button>
+            <div class="promo-badge">UP TO 99% OFF</div>
+            <h2>COINS SATURDAY</h2>
+            <div class="promo-image-box">
+                <img src="https://via.placeholder.com/200" alt="Promo Deal">
+            </div>
+            <button class="purple-btn" id="promo-shop-btn">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Top Header -->
+    <header class="main-header">
+        <div class="logo">GASS</div>
+        <div class="search-trigger-box" id="open-search-page">
+            <i class="fa-solid fa-magnifying-glass purple-icon"></i>
+            <span>GASS এ খুঁজুন...</span>
+        </div>
+    </header>
+
+    <!-- SEARCH PAGE VIEW (Hidden by default) -->
+    <div id="search-page" class="search-overlay hidden">
+        <div class="search-header">
+            <button id="close-search" class="icon-btn"><i class="fa-solid fa-arrow-left purple-icon"></i></button>
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="misti tetul" id="search-input">
+                <i class="fa-solid fa-camera purple-icon"></i>
+            </div>
+            <button class="purple-search-btn">Search</button>
+        </div>
+
+        <div class="search-suggestions">
+            <span class="sugg-tag">sweet tetul</span>
+            <span class="sugg-tag">sweet tamarind thailand</span>
+            <span class="sugg-tag">sweet tamarind</span>
+        </div>
+
+        <div class="search-section">
+            <div class="section-header">
+                <h4>Search History</h4>
+                <button class="clear-btn">Clear All <i class="fa-solid fa-trash-can purple-icon"></i></button>
+            </div>
+            <div class="tag-cloud">
+                <span class="history-tag">ওয়াটার প্রুফ চাদর</span>
+                <span class="history-tag">মিষ্টি তেঁতুল</span>
+                <span class="history-tag">ফেক নোলস</span>
+                <span class="history-tag">মেয়েদের চশমা সাদা গ্লাস</span>
+                <span class="history-tag">বালিশ</span>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="section-header">
+                <h4>Search Discovery</h4>
+                <button class="hide-btn">Hide <i class="fa-regular fa-eye-slash purple-icon"></i></button>
+            </div>
+            <div class="tag-cloud">
+                <span class="discovery-tag">tamarind candy</span>
+                <span class="discovery-tag">sweet tamarind box</span>
+                <span class="discovery-tag">tetul achar</span>
+                <span class="discovery-tag">misti tetul box</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dynamic Content Views -->
+    <main id="app-content">
+
+        <!-- HOME VIEW -->
+        <section id="view-home" class="page-view active">
+            <div class="category-grid">
+                <div class="cat-item"><i class="fa-solid fa-coins purple-icon"></i><span>99% OFF</span></div>
+                <div class="cat-item"><i class="fa-solid fa-bolt purple-icon"></i><span>Flash Sale</span></div>
+                <div class="cat-item"><i class="fa-solid fa-tags purple-icon"></i><span>Vouchers</span></div>
+                <div class="cat-item"><i class="fa-solid fa-gem purple-icon"></i><span>GASS Diamond</span></div>
+            </div>
+
+            <div class="section-title">সবচেয়ে জনপ্রিয় ডিলসমূহ</div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Product">
+                    <h4>স্মার্ট ওয়াচ</h4>
+                    <p class="price">৳৪৫৫ <span class="discount">-৩১%</span></p>
+                    <button class="add-cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="Product">
+                    <h4>ওয়ারলেস ইয়ারবাড</h4>
+                    <p class="price">৳৯৯ <span class="discount">-৬৭%</span></p>
+                    <button class="add-cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INBOX VIEW -->
+        <section id="view-inbox" class="page-view hidden">
+            <div class="inbox-container">
+                <div class="inbox-sidebar">
+                    <button class="inbox-tab active"><i class="fa-solid fa-comments purple-icon"></i> <span>মেসেজ</span></button>
+                    <button class="inbox-tab"><i class="fa-solid fa-box purple-icon"></i> <span>অর্ডার</span></button>
+                    <button class="inbox-tab"><i class="fa-solid fa-bell purple-icon"></i> <span>নোটিফিকেশন</span></button>
+                    <button class="inbox-tab"><i class="fa-solid fa-bullhorn purple-icon"></i> <span>অফার</span></button>
+                </div>
+                <div class="inbox-content">
+                    <div class="msg-card">
+                        <h4>ফ্রি গিফট অফার! 🎁</h4>
+                        <p>গেম খেলুন এবং GASS Coins দিয়ে ফ্রি উপহার জিতে নিন।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CART VIEW -->
+        <section id="view-cart" class="page-view hidden">
+            <div class="cart-container">
+                <i class="fa-solid fa-cart-flatbed empty-icon purple-icon"></i>
+                <p>আপনার কার্টে কোনো প্রোডাক্ট নেই</p>
+                <button class="purple-outline-btn">CONTINUE SHOPPING</button>
+            </div>
+        </section>
+
+        <!-- ACCOUNT VIEW -->
+        <section id="view-account" class="page-view hidden">
+            <div class="account-header">
+                <i class="fa-solid fa-circle-user profile-icon purple-icon"></i>
+                <h3 id="user-display-name">shaminhossen03</h3>
+                <div class="rewards-info">
+                    <span><i class="fa-solid fa-gem purple-icon"></i> GASS Diamond: 120</span> | 
+                    <span><i class="fa-solid fa-coins purple-icon"></i> GASS Silver: 500</span>
+                </div>
+            </div>
+
+            <div class="orders-box">
+                <h4>My Orders</h4>
+                <div class="order-icons">
+                    <div><i class="fa-solid fa-wallet purple-icon"></i><p>To Pay</p></div>
+                    <div><i class="fa-solid fa-box-archive purple-icon"></i><p>To Ship</p></div>
+                    <div><i class="fa-solid fa-truck-fast purple-icon"></i><p>To Receive</p></div>
+                    <div><i class="fa-solid fa-star purple-icon"></i><p>To Review</p></div>
+                    <div><i class="fa-solid fa-rotate-left purple-icon"></i><p>Returns</p></div>
+                </div>
+            </div>
+
+            <div class="game-zone-card" id="open-games">
+                <i class="fa-solid fa-gamepad purple-icon"></i>
+                <span>GASS Games Zone (Snake & Minesweeper)</span>
+            </div>
+
+            <div class="settings-list">
+                <div class="setting-item"><i class="fa-solid fa-user-pen purple-icon"></i> Account Information</div>
+                <div class="setting-item"><i class="fa-solid fa-location-dot purple-icon"></i> Address Book</div>
+                <div class="setting-item"><i class="fa-solid fa-globe purple-icon"></i> Language / ভাষা</div>
+                <div class="setting-item logout-text" id="logout-btn"><i class="fa-solid fa-right-from-bracket purple-icon"></i> Logout</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-target="view-home"><i class="fa-solid fa-house purple-icon"></i><span>Home</span></button>
+        <button class="nav-item" data-target="view-inbox"><i class="fa-solid fa-message purple-icon"></i><span>Messages</span></button>
+        <button class="nav-item" data-target="view-cart"><i class="fa-solid fa-cart-shopping purple-icon"></i><span>Cart</span></button>
+        <button class="nav-item" data-target="view-account"><i class="fa-solid fa-user purple-icon"></i><span>Account</span></button>
+    </nav>
+
+</body>
+</html>
